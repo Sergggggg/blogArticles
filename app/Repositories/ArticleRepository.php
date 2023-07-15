@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Articles;
+use Illuminate\Http\Request;
 
 class ArticleRepository
 {
@@ -45,7 +46,7 @@ class ArticleRepository
      *  get single article from database
      */
 
-    public function updateSingleArticleDatabase(object $request)
+    public function updateSingleArticleDatabase(Request $request)
     {
         $this->editSingleArticleDatabase($request->id, $request->user_id)
             ->update($request->except('_token', '_method'));
